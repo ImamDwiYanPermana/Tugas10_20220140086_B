@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital@0;1&family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+     <!-- boodstrap icons-->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+   />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/About.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">
+        <a href="#">
+          <img src="img/Screenshot 2024-02-15 043553.png" />
+        </a>
+      </div>
+
+      <ul class="nav-link">
+        <li class="Link"><a href="index.html">Home</a></li>
+        <li class="Link"><a href="Biodata.html">About</a></li>
+        <li class="Link"><a href="hobi.html">Hobi</a></li>
+        <li class="Link"><a href="hobi.html">Wisaat</a></li>
+      </ul>
+    </nav>
+    <header class="container">
+      <div class="conten">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <h1>HI, I'm <span>Imam</span>, Web Deisgner</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ex
+          deleniti a. Est quae dolorum, doloribus quis atque officiis a rerum
+          vero corrupti? Officiis laboriosam, rerum repellat animi ratione
+          aperiam?
+        </p>
+      </div>
+      <div class="image">
+        <img src="img/WIN_20231221_21_28_33_Pro.jpg" />
+      </div>
+    </header>
+    <h3 class="contact__title">Biodata</h3>
+    <section>
+      <h2>Data Pribadi</h2>
+      <p><strong>Nama:</strong> Imam Dwi Yan Permana</p>
+      <p><strong>Tanggal Lahir:</strong> 03 - 07 -2003</p>
+      <p><strong>Alamat:</strong> Kelaten</p>
+      <p><strong>Email:</strong> imamgaming1@gmail.com</p>
+  </section>
+
+  <section>
+      <h2>Pendidikan</h2>
+      <p><strong>SMK:</strong> SMK BUDINIAH</p>
+      <p><strong>Perguruan Tinggi:</strong> Universitas Muhammadiyah Yogyakarta, Teknologi Informasi</p>
+  </section>
+
+    <form>
+    <!--contact-->
+    <h3 class="contact__title">CONTACT</h3>
+    <form id="contact__form" action="https://formspree.io/f/mpzvppqe" method="POST">
+        <div class="contact__form-div">
+            <input type="text" placeholder="Your Name" id="Name" name="Name" class="contact__form-input" required>
+        </div>
+
+        <div class="contact__form-div">
+            <input type="email" placeholder="Your Email" id="Email" name="Email" class="contact__form-input" required>
+        </div>
+
+        <div class="contact__form-div">
+            <textarea name="Message" id="Message" placeholder="Your Message" class="contact__form-input" required></textarea>
+        </div>
+        <button class="btn">Massage</button>
+      </form>
+<footer
+class="text-white text-center pb-5"
+style="background-color: #00b3b3"
+>
+<p>
+  Created with Love <i class="bi bi-balloon-heart-fill text-danger"></i>
+  <a href="https://instagram.com/imamdwyp/" class="text-white fw-bold"
+    >Imam Dwi Yan Permana</a
+  >
+</p>
+<p id="greeting"></p>
+<p id="date-time">&copy;</p>
+</footer>
+<script src="script.js"></script>
+<script>
+// Fungsi untuk mengupdate waktu secara real-time
+function updateTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // Format waktu
+    var timeString = ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+
+    // Menampilkan waktu di halaman
+    document.getElementById('date-time').textContent = timeString;
+}
+
+// Memanggil fungsi updateTime setiap detik
+setInterval(updateTime, 1000);
+
+// Fungsi untuk memberikan salam dan tanggal
+function updateTimeAndGreeting() {
+    var now = new Date();
+    var days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    var dayOfWeek = days[now.getDay()];
+    var hours = now.getHours();
+    var greeting = "";
+
+    // Mendefinisikan salam berdasarkan waktu
+    if (hours < 12) {
+        greeting = "Selamat pagi!";
+    } else if (hours < 18) {
+        greeting = "Selamat siang!";
+    } else {
+        greeting = "Selamat malam!";
+    }
+
+    // Format tanggal
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    var dateString = now.toLocaleDateString('en-US', dateOptions);
+
+    // Menampilkan salam dan tanggal di halaman
+    document.getElementById('greeting').textContent = greeting + ' Hari ini adalah ' + dayOfWeek + ',';
+}
+
+// Memanggil fungsi updateTimeAndGreeting untuk pertama kalinya saat halaman dimuat
+updateTimeAndGreeting();
+</script>
+  </body>
+</html>
